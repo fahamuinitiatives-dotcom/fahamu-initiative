@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fahamu Initiatives | Unlocking Educational Opportunities</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .bg-navy { background-color: #0f172a; }
+        .text-navy { color: #0f172a; }
+        .bg-amber { background-color: #f59e0b; }
+        .text-amber { color: #f59e0b; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+    <!-- WhatsApp Share Banner -->
+    <div class="bg-emerald-600 text-white text-center py-2 px-4 text-xs md:text-sm font-bold flex justify-center items-center gap-2">
+        <span>Help spread the word! Share these opportunities with your school:</span>
+        <a href="https://wa.me/?text=Check%20out%20these%20free%20high%20school%20scholarships%20and%20competitions%20for%20Kenyan%20students!%20%F0%9F%8E%93%20fahamu-initiatives.tiiny.site" target="_blank" class="bg-white text-emerald-700 px-3 py-1 rounded-full text-xs hover:bg-emerald-100 transition shadow-sm">
+            📲 Share on WhatsApp
+        </a>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-navy text-white p-4 shadow-md sticky top-0 z-40">
+        <div class="container mx-auto flex justify-between items-center px-2">
+            <h1 class="text-xl md:text-2xl font-bold text-amber tracking-wide">Fahamu Initiatives</h1>
+            <ul class="flex space-x-3 md:space-x-6 text-xs md:text-sm font-medium">
+                <li><a href="#tips" class="hover:text-amber transition">Tips</a></li>
+                <li><a href="#opportunities" class="hover:text-amber transition">Opportunities</a></li>
+                <li><a href="#survey" class="hover:text-amber transition">Survey</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="bg-gradient-to-b from-slate-900 to-navy text-white py-14 px-4 text-center">
+        <div class="container mx-auto max-w-3xl">
+            <span class="bg-amber text-slate-900 text-xs font-extrabold uppercase px-3 py-1 rounded-full tracking-widest inline-block mb-3">Elimu Angavu</span>
+            <h2 class="text-3xl md:text-5xl font-extrabold mb-4 leading-tight">Lighting the Path to Global & Local Educational Growth</h2>
+            <p class="text-gray-300 text-base md:text-lg mb-8 leading-relaxed">
+                Empowering high school students across Kenya (8-4-4, CBC, IGCSE, A-Level) by bridging the awareness gap for world-class scholarships, STEM challenges, and summer academies.
+            </p>
+        </div>
+    </header>
+
+    <!-- Application Strategy Tips Section -->
+    <section id="tips" class="py-12 bg-white px-4">
+        <div class="container mx-auto max-w-5xl">
+            <h3 class="text-2xl md:text-3xl font-bold text-navy text-center mb-8">💡 How to Win: 3-Step Application Strategy</h3>
+            <div class="grid md:grid-cols-3 gap-6 text-sm">
+                <div class="bg-amber/10 p-6 rounded-xl border border-amber/20 shadow-sm">
+                    <h4 class="font-bold text-lg mb-2 text-navy">1. Check Requirements Early</h4>
+                    <p class="text-gray-700 leading-relaxed">Check age limits and grade requirements on each card before starting. KCSE, CBC, IGCSE, and A-Levels are accepted equally across international programs.</p>
+                </div>
+                <div class="bg-blue-50 p-6 rounded-xl border border-blue-100 shadow-sm">
+                    <h4 class="font-bold text-lg mb-2 text-navy">2. Highlight Local Impact</h4>
+                    <p class="text-gray-700 leading-relaxed">Global selection panels love local action. In your essays, describe specific challenges you helped address in your local school, neighborhood, or county.</p>
+                </div>
+                <div class="bg-emerald-50 p-6 rounded-xl border border-emerald-100 shadow-sm">
+                    <h4 class="font-bold text-lg mb-2 text-navy">3. Build a "Brag Sheet"</h4>
+                    <p class="text-gray-700 leading-relaxed">Give your teachers a list of your activities and goals 3 weeks before asking for recommendation letters so they can write strong, detailed references.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content & Directory -->
+    <section id="opportunities" class="py-12 bg-gray-50 container mx-auto px-4 max-w-7xl">
+        <div class="text-center mb-8">
+            <h3 class="text-3xl font-bold text-navy mb-2">Explore 40+ Competitions & Programs</h3>
+            <p class="text-gray-600 text-sm">Tap "View Details & Requirements" on any card for eligibility checklists and application tips.</p>
+        </div>
+
+        <!-- Search & Advanced Filter Controls -->
+        <div class="mb-8 space-y-4">
+            <!-- Search Input -->
+            <div class="max-w-md mx-auto">
+                <input type="text" id="searchInput" onkeyup="filterPrograms()" placeholder="🔍 Search by program name, subject, or keyword..." class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-amber shadow-sm text-sm">
+            </div>
+
+            <!-- Requirement & Category Filters -->
+            <div class="bg-white p-4 rounded-xl border border-gray-200 shadow-sm max-w-4xl mx-auto space-y-3">
+                <!-- Dropdown Requirement Filters -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs font-bold">
+                    <div>
+                        <label class="block text-gray-500 mb-1">🎂 AGE REQUIREMENT:</label>
+                        <select id="ageFilter" onchange="filterPrograms()" class="w-full p-2.5 rounded-lg border border-gray-300 bg-gray-50 focus:ring-2 focus:ring-amber outline-none">
+                            <option value="all">All Ages</option>
+                            <option value="13-15">Under 16 (Ages 13 - 15)</option>
+                            <option value="16-18">16 & Older (Ages 16 - 18+)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-gray-500 mb-1">🎓 GRADE LEVEL / CURRICULUM:</label>
+                        <select id="gradeFilter" onchange="filterPrograms()" class="w-full p-2.5 rounded-lg border border-gray-300 bg-gray-50 focus:ring-2 focus:ring-amber outline-none">
+                            <option value="all">All Grades / Form Levels</option>
+                            <option value="lower">Lower High School (Form 1-2 / Y9-10)</option>
+                            <option value="upper">Upper High School (Form 3-4 / Y11-13 / KCSE Grads)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Category Pill Buttons -->
+                <div class="flex flex-wrap justify-center gap-2 text-xs font-semibold pt-2 border-t border-gray-100" id="categoryContainer">
+                    <button onclick="setCategory('all', this)" class="cat-btn bg-navy text-white px-3 py-1.5 rounded-full shadow-sm">All</button>
+                    <button onclick="setCategory('saved', this)" class="cat-btn bg-white text-gray-700 border border-gray-300 px-3 py-1.5 rounded-full">⭐ Saved</button>
+                    <button onclick="setCategory('free', this)" class="cat-btn bg-emerald-100 text-emerald-800 border border-emerald-300 px-3 py-1.5 rounded-full">💚 100% FREE</button>
+                    <button onclick="setCategory('quick', this)" class="cat-btn bg-purple-100 text-purple-800 border border-purple-300 px-3 py-1.5 rounded-full">⚡ Quick Apply</button>
+                    <button onclick="setCategory('local', this)" class="cat-btn bg-amber-100 text-amber-900 border border-amber-300 px-3 py-1.5 rounded-full">🇰🇪 Local Kenya</button>
+                    <button onclick="setCategory('essay', this)" class="cat-btn bg-white text-gray-700 border border-gray-300 px-3 py-1.5 rounded-full">✍️ Essays</button>
+                    <button onclick="setCategory('stem', this)" class="cat-btn bg-white text-gray-700 border border-gray-300 px-3 py-1.5 rounded-full">🔬 STEM</button>
+                    <button onclick="setCategory('business', this)" class="cat-btn bg-white text-gray-700 border border-gray-300 px-3 py-1.5 rounded-full">💼 Business</button>
+                    <button onclick="setCategory('summer', this)" class="cat-btn bg-white text-gray-700 border border-gray-300 px-3 py-1.5 rounded-full">🎓 Summer/Camps</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cards Grid -->
+        <div id="cardsGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Dynamic Cards Injected via JavaScript -->
+        </div>
+    </section>
+
+    <!-- RESEARCH SURVEY SECTION -->
+    <section id="survey" class="bg-gradient-to-r from-amber-500 to-amber-600 text-slate-900 py-16 px-4 text-center shadow-inner">
+        <div class="container mx-auto max-w-2xl bg-white p-8 rounded-2xl shadow-2xl relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-2 bg-gray-200">
+                <div class="h-full bg-emerald-500 w-[82%]"></div>
+            </div>
+            <span class="bg-slate-900 text-amber font-extrabold text-xs uppercase px-3 py-1 rounded-full tracking-widest inline-block mb-3 mt-2">IGCSE Primary Research</span>
+            <h3 class="text-3xl font-black mb-2 text-navy">Help Us Reach Our Goal!</h3>
+            
+            <div class="mb-6">
+                <p class="text-4xl font-black text-emerald-600 mb-1">82 / 100</p>
+                <p class="text-xs font-bold text-gray-500 uppercase tracking-wide">Student Survey Responses Collected</p>
+            </div>
+
+            <p class="text-gray-700 font-medium text-sm md:text-base mb-8 leading-relaxed">
+                We are studying how high school students in Kenya discover global opportunities. Please take 2 minutes to fill out our survey to help us complete our Global Perspectives primary research project!
+            </p>
+            
+            <!-- GOOGLE FORMS LINK HERE -->
+            <a href="https://forms.gle/ELQgMdppsmBXB2U5A" target="_blank" rel="noopener noreferrer" class="inline-block w-full sm:w-auto bg-slate-900 text-white font-extrabold px-8 py-4 rounded-full text-base hover:bg-slate-800 transition shadow-lg transform hover:-translate-y-0.5">
+                📝 Take the 2-Minute Survey &rarr;
+            </a>
+        </div>
+    </section>
+
+    <!-- Interactive Requirement Modal Popup -->
+    <div id="detailModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 hidden p-4">
+        <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative border border-gray-100">
+            <!-- Header Image -->
+            <div class="h-48 bg-cover bg-center relative" id="modalImg">
+                <button onclick="closeModal()" class="absolute top-4 right-4 bg-slate-900/80 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-lg hover:bg-slate-900 transition">×</button>
+                <div class="absolute bottom-4 left-4 right-4">
+                    <span id="modalCategoryBadge" class="bg-amber text-slate-900 text-[10px] font-black uppercase px-2.5 py-1 rounded-full tracking-wider"></span>
+                </div>
+            </div>
+
+            <div class="p-6">
+                <h3 id="modalTitle" class="text-2xl font-black text-navy mb-2"></h3>
+                
+                <!-- Eligibility Badges Box -->
+                <div class="bg-gray-50 p-4 rounded-xl border border-gray-200 mb-6 space-y-2 text-xs">
+                    <div class="flex items-center gap-2">
+                        <span class="font-bold text-navy w-28">🎂 Age Requirement:</span>
+                        <span id="modalAge" class="font-semibold text-gray-700"></span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="font-bold text-navy w-28">🎓 Eligible Grades:</span>
+                        <span id="modalGrade" class="font-semibold text-gray-700"></span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="font-bold text-navy w-28">📅 Deadline:</span>
+                        <span id="modalDeadline" class="font-semibold text-amber-700"></span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="font-bold text-navy w-28">💵 Application Fee:</span>
+                        <span id="modalFee" class="font-semibold text-gray-700"></span>
+                    </div>
+                </div>
+
+                <!-- Description -->
+                <div class="mb-6">
+                    <h4 class="font-bold text-navy text-sm uppercase tracking-wider mb-2">Overview & Benefits</h4>
+                    <p id="modalDesc" class="text-gray-600 text-sm leading-relaxed"></p>
+                </div>
+
+                <!-- Strategy Tip -->
+                <div class="bg-blue-50 p-4 rounded-xl border border-blue-100 mb-6">
+                    <h4 class="font-bold text-navy text-xs uppercase tracking-wider mb-1">💡 Application Tip</h4>
+                    <p id="modalTip" class="text-gray-700 text-xs leading-relaxed"></p>
+                </div>
+
+                <!-- Direct Apply Button -->
+                <div class="flex gap-3">
+                    <a id="modalApplyBtn" href="#" target="_blank" rel="noopener noreferrer" class="flex-1 bg-slate-900 text-white font-bold py-3 text-center rounded-xl hover:bg-amber hover:text-navy transition shadow-md text-sm">Visit Official Application Page &rarr;</a>
+                    <button onclick="closeModal()" class="px-5 py-3 border border-gray-300 text-gray-600 font-bold rounded-xl text-sm hover:bg-gray-50">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-navy text-gray-400 py-8 text-center text-xs border-t border-slate-800">
+        <p>&copy; 2026 Fahamu Initiatives (Elimu Angavu). Empowering Youth through Access & Knowledge.</p>
+    </footer>
+
+    <!-- JavaScript Data and Filtering Logic -->
+    <script>
+        const programs = [
+            // International Programs (1 - 31)
+            { 
+                title: "YYAS (Yale Young African Scholars)", 
+                category: "summer", free: true, quick: false, local: false,
+                age: "14-18", ageGroup: "13-15", grade: "Form 3 / Y11 / Grade 10-11", gradeGroup: "upper",
+                deadline: "November 2026",
+                img: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&auto=format&fit=crop",
+                tags: ["Leadership", "Africa", "Yale"], 
+                link: "https://african-scholars.yale.edu/", 
+                desc: "Fully funded intensive academic & leadership program for high school students living in Africa.",
+                tip: "Focus heavily on how you plan to bring social change back to your high school or local community in Kenya."
+            },
+            { 
+                title: "YYGS (Yale Young Global Scholars)", 
+                category: "summer", free: false, quick: false, local: false,
+                age: "16-18", ageGroup: "16-18", grade: "Form 3-4 / Y11-12", gradeGroup: "upper",
+                deadline: "November 2026",
+                img: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600&auto=format&fit=crop",
+                tags: ["Interdisciplinary", "Yale"], 
+                link: "https://globalscholars.yale.edu/", 
+                desc: "Pre-college summer academic experience with robust need-based financial assistance available.",
+                tip: "Apply during the Early Action deadline round to maximize financial aid opportunities."
+            },
+            { 
+                title: "John Locke Essay Competition", 
+                category: "essay", free: true, quick: true, local: false,
+                age: "14-18", ageGroup: "13-15", grade: "Form 1-4 / Y9-13", gradeGroup: "lower",
+                deadline: "May 2027",
+                img: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=600&auto=format&fit=crop",
+                tags: ["Philosophy", "Economics"], 
+                link: "https://www.johnlockeinstitute.com/essay-competition", 
+                desc: "Global essay contest evaluated by Oxford & Princeton independent academics. Free entry.",
+                tip: "Pick an essay question that challenges popular opinion and support it with rigorous logic."
+            },
+            { 
+                title: "TechGirls", 
+                category: "stem", free: true, quick: false, local: false,
+                age: "15-17", ageGroup: "13-15", grade: "Form 2-3 / Y10-11", gradeGroup: "upper",
+                deadline: "December 2026",
+                img: "https://images.unsplash.com/photo-1573164713988-8665fc963095?w=600&auto=format&fit=crop",
+                tags: ["STEM", "Girls", "Exchange"], 
+                link: "https://techgirlsglobal.org/", 
+                desc: "100% fully funded US State Department exchange program for young women interested in STEM (Kenya eligible).",
+                tip: "Demonstrate a clear community tech project idea you want to execute upon returning to Kenya."
+            },
+            { 
+                title: "Diamond Challenge", 
+                category: "business", free: true, quick: false, local: false,
+                age: "14-18", ageGroup: "13-15", grade: "Form 1-4 / Y9-13", gradeGroup: "lower",
+                deadline: "January 2027",
+                img: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&auto=format&fit=crop",
+                tags: ["Entrepreneurship"], 
+                link: "https://diamondchallenge.org/", 
+                desc: "Premier high school entrepreneurship competition offering cash awards and mentorship.",
+                tip: "Form a team of 2-4 classmates with complementary skills (e.g., coding, finance, presentation)."
+            },
+            { 
+                title: "Wharton Global Investment Comp", 
+                category: "business", free: true, quick: false, local: false,
+                age: "14-18", ageGroup: "13-15", grade: "Form 1-4 / Y9-13", gradeGroup: "lower",
+                deadline: "September 2026",
+                img: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&auto=format&fit=crop",
+                tags: ["Finance", "Wharton"], 
+                link: "https://globalyouth.wharton.upenn.edu/", 
+                desc: "Free online investment simulation for high school teams, run by the Wharton School.",
+                tip: "Focus your strategy on long-term portfolio sustainability rather than short-term risky trades."
+            },
+            { 
+                title: "Research Science Institute (RSI)", 
+                category: "stem", free: true, quick: false, local: false,
+                age: "16-18", ageGroup: "16-18", grade: "Form 3 / Y11-12", gradeGroup: "upper",
+                deadline: "January 2027",
+                img: "https://images.unsplash.com/photo-1507668077129-56e32842fceb?w=600&auto=format&fit=crop",
+                tags: ["MIT", "STEM Research"], 
+                link: "https://www.cee.org/programs/research-science-institute", 
+                desc: "6-week summer program combining coursework at MIT with off-campus scientific research. 100% Free.",
+                tip: "Highlight advanced math or science projects you've conducted independently."
+            },
+            { 
+                title: "Telluride Assoc. Summer (TASS)", 
+                category: "summer", free: true, quick: false, local: false,
+                age: "15-17", ageGroup: "13-15", grade: "Form 2-3 / Y10-11", gradeGroup: "lower",
+                deadline: "January 2027",
+                img: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&auto=format&fit=crop",
+                tags: ["Humanities", "100% Free"], 
+                link: "https://www.tellurideassociation.org/", 
+                desc: "Six-week educational experience completely free of charge, focusing on humanities and social justice.",
+                tip: "Be authentic in your essay essays regarding your personal lived experiences."
+            },
+            { 
+                title: "African Leadership Academy (ALA)", 
+                category: "summer", free: true, quick: false, local: false,
+                age: "15-18", ageGroup: "16-18", grade: "Form 3-4 / Y11-12", gradeGroup: "upper",
+                deadline: "December 2026",
+                img: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&auto=format&fit=crop",
+                tags: ["Leadership", "Africa"], 
+                link: "https://www.africanleadershipacademy.org/", 
+                desc: "Two-year pre-university program in South Africa with generous scholarship support.",
+                tip: "Demonstrate a track record of initiative and student leadership in school clubs."
+            },
+            { 
+                title: "Lumiere Scholars Essay Award", 
+                category: "essay", free: false, quick: true, local: false,
+                age: "14-18", ageGroup: "13-15", grade: "Form 1-4 / Y9-13", gradeGroup: "lower",
+                deadline: "Rolling",
+                img: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&auto=format&fit=crop",
+                tags: ["Research"], link: "https://www.lumierescholar.com/", 
+                desc: "Recognizes outstanding high school independent research papers across sciences and humanities.",
+                tip: "Submit research papers written for school projects or global competitions."
+            },
+            { 
+                title: "Horizon Academic Essay Competition", 
+                category: "essay", free: false, quick: true, local: false,
+                age: "15-18", ageGroup: "16-18", grade: "Form 2-4 / Y10-13", gradeGroup: "upper",
+                deadline: "Rolling",
+                img: "https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=600&auto=format&fit=crop",
+                tags: ["Academic Research"], link: "https://horizoninspires.com/", 
+                desc: "Global competition offering expert feedback for high school research writing.",
+                tip: "Ensure your references and citations follow standard academic formatting."
+            },
+            { 
+                title: "LSE Economics Essay Competition", 
+                category: "essay", free: true, quick: true, local: false,
+                age: "15-18", ageGroup: "16-18", grade: "Form 3-4 / Y11-13", gradeGroup: "upper",
+                deadline: "July 2027",
+                img: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=600&auto=format&fit=crop",
+                tags: ["Economics"], link: "https://www.lse.ac.uk/economics", 
+                desc: "Hosted by London School of Economics SU for students interested in economics.",
+                tip: "Connect microeconomic principles to real-world inflation or trade challenges."
+            },
+            { 
+                title: "UC Berkeley Social Justice Essay", 
+                category: "essay", free: true, quick: true, local: false,
+                age: "14-18", ageGroup: "13-15", grade: "Form 1-4 / Y9-13", gradeGroup: "lower",
+                deadline: "April 2027",
+                img: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&auto=format&fit=crop",
+                tags: ["Social Justice"], link: "https://www.berkeley.edu/", 
+                desc: "Focuses on global policy, human rights, and social justice topics.",
+                tip: "Propose actionable community policy reforms."
+            },
+            { 
+                title: "Modeling the Future Challenge", 
+                category: "stem", free: true, quick: false, local: false,
+                age: "15-18", ageGroup: "16-18", grade: "Form 3-4 / Y11-13", gradeGroup: "upper",
+                deadline: "November 2026",
+                img: "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=600&auto=format&fit=crop",
+                tags: ["Math", "Data"], link: "https://www.mtfchallenge.org/", 
+                desc: "Solve real-world problems using mathematical modeling and data analytics.",
+                tip: "Use open data sets to back up your mathematical risk analysis."
+            },
+            { 
+                title: "Scholastic Art & Writing Awards", 
+                category: "essay", free: false, quick: true, local: false,
+                age: "13-18", ageGroup: "13-15", grade: "Form 1-4 / Y8-13", gradeGroup: "lower",
+                deadline: "December 2026",
+                img: "https://images.unsplash.com/photo-1471107340929-a87cd0f5b5f3?w=600&auto=format&fit=crop",
+                tags: ["Creative Writing"], link: "https://www.artandwriting.org/", 
+                desc: "Award recognizing creative achievements in art and writing.",
+                tip: "Express your original voice and avoid clichés."
+            },
+            { 
+                title: "Congressional App Challenge", 
+                category: "stem", free: true, quick: false, local: false,
+                age: "13-18", ageGroup: "13-15", grade: "Form 1-4 / Y8-13", gradeGroup: "lower",
+                deadline: "November 2026",
+                img: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&auto=format&fit=crop",
+                tags: ["Coding"], link: "https://www.congressionalappchallenge.us/", 
+                desc: "Promotes coding skills through app creation and video submissions.",
+                tip: "Ensure your app submission video clearly explains the problem it solves."
+            },
+            { 
+                title: "Conrad Challenge", 
+                category: "stem", free: false, quick: false, local: false,
+                age: "13-18", ageGroup: "13-15", grade: "Form 1-4 / Y8-13", gradeGroup: "lower",
+                deadline: "November 2026",
+                img: "https://images.unsplash.com/photo-1517976487492-5750f3195933?w=600&auto=format&fit=crop",
+                tags: ["Innovation"], link: "https://www.conradchallenge.org/", 
+                desc: "Design tech solutions to global challenges in aerospace, health, or energy.",
+                tip: "Develop a functional prototype or detailed wireframe."
+            },
+            { 
+                title: "Samsung Solve for Tomorrow", 
+                category: "stem", free: true, quick: false, local: false,
+                age: "14-18", ageGroup: "13-15", grade: "Form 1-4 / Y9-13", gradeGroup: "lower",
+                deadline: "November 2026",
+                img: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&auto=format&fit=crop",
+                tags: ["STEM", "Community"], link: "https://www.samsung.com/", 
+                desc: "Use STEM to solve critical local community issues.",
+                tip: "Partner with a teacher supervisor to mentor your project pitch."
+            },
+            { 
+                title: "Intl Youth Environmental Challenge", 
+                category: "stem", free: true, quick: true, local: false,
+                age: "13-18", ageGroup: "13-15", grade: "Form 1-4 / Y8-13", gradeGroup: "lower",
+                deadline: "March 2027",
+                img: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=600&auto=format&fit=crop",
+                tags: ["Environment"], link: "https://www.google.com/search?q=International+youth+environmental+challenge", 
+                desc: "Propose actionable solutions to climate change and deforestation.",
+                tip: "Focus on scalable, low-cost local solutions."
+            },
+            { 
+                title: "International Physics Olympiad", 
+                category: "stem", free: false, quick: false, local: false,
+                age: "15-19", ageGroup: "16-18", grade: "Form 3-4 / Y11-13", gradeGroup: "upper",
+                deadline: "Varies",
+                img: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=600&auto=format&fit=crop",
+                tags: ["Physics"], link: "https://www.ipho-unofficial.org/", 
+                desc: "Worldwide physics competition for top high school talent.",
+                tip: "Practice past theoretical and experimental exam papers under timed conditions."
+            },
+            { 
+                title: "International Biology Olympiad", 
+                category: "stem", free: false, quick: false, local: false,
+                age: "15-19", ageGroup: "16-18", grade: "Form 3-4 / Y11-13", gradeGroup: "upper",
+                deadline: "Varies",
+                img: "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=600&auto=format&fit=crop",
+                tags: ["Biology"], link: "https://www.ibo-info.org/", 
+                desc: "Premier international life sciences competition.",
+                tip: "Master university-level genetics and biochemistry concepts."
+            },
+            { 
+                title: "UDC Capital Cup", 
+                category: "business", free: true, quick: false, local: false,
+                age: "14-18", ageGroup: "13-15", grade: "Form 1-4 / Y9-13", gradeGroup: "lower",
+                deadline: "February 2027",
+                img: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=600&auto=format&fit=crop",
+                tags: ["Pitch"], link: "https://www.udc.edu/", 
+                desc: "Youth business plan pitch competition with cash awards.",
+                tip: "Include realistic financial projections in your pitch deck."
+            },
+            { 
+                title: "Case Catalyst", 
+                category: "business", free: false, quick: false, local: false,
+                age: "14-18", ageGroup: "13-15", grade: "Form 1-4 / Y9-13", gradeGroup: "lower",
+                deadline: "March 2027",
+                img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&auto=format&fit=crop",
+                tags: ["Strategy"], link: "https://www.google.com/search?q=Case+Catalyst", 
+                desc: "Global business case study competition.",
+                tip: "Use SWOT analysis frameworks to structure your recommendations."
+            },
+            { 
+                title: "UWC (United World Colleges)", 
+                category: "summer", free: true, quick: false, local: false,
+                age: "16-18", ageGroup: "16-18", grade: "Form 3-4 / Y11-12", gradeGroup: "upper",
+                deadline: "November 2026",
+                img: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&auto=format&fit=crop",
+                tags: ["IB Diploma", "Scholarship"], link: "https://www.uwc.org/", 
+                desc: "Global movement providing IB diploma education with full scholarships for selected students.",
+                tip: "Apply through the UWC Kenya National Committee."
+            },
+            { 
+                title: "BU PROMYS (Math Program)", 
+                category: "stem", free: true, quick: false, local: false,
+                age: "14-18", ageGroup: "13-15", grade: "Form 1-4 / Y9-13", gradeGroup: "lower",
+                deadline: "March 2027",
+                img: "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=600&auto=format&fit=crop",
+                tags: ["Math"], link: "https://promys.org/", 
+                desc: "Intensive 6-week math program with full financial aid available.",
+                tip: "Spend ample time on the challenging application problem set."
+            },
+            { 
+                title: "Stanford SUMaC", 
+                category: "stem", free: false, quick: false, local: false,
+                age: "15-18", ageGroup: "16-18", grade: "Form 2-4 / Y10-12", gradeGroup: "upper",
+                deadline: "February 2027",
+                img: "https://images.unsplash.com/photo-1562774053-701939374585?w=600&auto=format&fit=crop",
+                tags: ["Stanford"], link: "https://sumac.stanford.edu/", 
+                desc: "Stanford University Mathematics Camp for advanced high school students.",
+                tip: "Submit proof of advanced math accomplishments."
+            },
+            { 
+                title: "Wharton LBW", 
+                category: "business", free: false, quick: false, local: false,
+                age: "16-18", ageGroup: "16-18", grade: "Form 3 / Y11-12", gradeGroup: "upper",
+                deadline: "February 2027",
+                img: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=600&auto=format&fit=crop",
+                tags: ["Wharton"], link: "https://globalyouth.wharton.upenn.edu/", 
+                desc: "Summer leadership program introducing business strategy.",
+                tip: "Ask a economics or business teacher for a reference letter."
+            },
+            { 
+                title: "ADA Debate Competitions", 
+                category: "essay", free: false, quick: false, local: false,
+                age: "14-18", ageGroup: "13-15", grade: "Form 1-4 / Y9-13", gradeGroup: "lower",
+                deadline: "Rolling",
+                img: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=600&auto=format&fit=crop",
+                tags: ["Debate"], link: "https://www.google.com/search?q=ADA+Debate", 
+                desc: "Competitive debate circuits sharpening public speaking skills.",
+                tip: "Practice World Schools style debate formats."
+            },
+            { 
+                title: "UN Volunteering (Youth)", 
+                category: "business", free: true, quick: true, local: false,
+                age: "18-29", ageGroup: "16-18", grade: "KCSE Graduates / Y13+", gradeGroup: "upper",
+                deadline: "Ongoing",
+                img: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600&auto=format&fit=crop",
+                tags: ["UN", "Volunteer"], link: "https://www.unv.org/", 
+                desc: "Official United Nations initiative engaging young adults in civic action.",
+                tip: "Highlight volunteer hours completed in Kenya."
+            },
+            { 
+                title: "ALA Global Scholars Program", 
+                category: "summer", free: false, quick: false, local: false,
+                age: "13-19", ageGroup: "13-15", grade: "Form 1-4 / Y8-13", gradeGroup: "lower",
+                deadline: "March 2027",
+                img: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&auto=format&fit=crop",
+                tags: ["Camp", "ALA"], link: "https://www.africanleadershipacademy.org/gsp/", 
+                desc: "An intensive 18-day summer leadership camp in South Africa.",
+                tip: "Apply early to secure early-bird discount spots."
+            },
+            { 
+                title: "Lumos Youth Opportunities", 
+                category: "summer", free: true, quick: true, local: false,
+                age: "14-25", ageGroup: "13-15", grade: "Form 1-4 / Y9-13", gradeGroup: "lower",
+                deadline: "Ongoing",
+                img: "https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?w=600&auto=format&fit=crop",
+                tags: ["Impact"], link: "https://www.lumos.foundation/", 
+                desc: "Global community platform spotlighting youth grants.",
+                tip: "Bookmark this portal for updated monthly fellowship drops."
+            },
+
+            // Kenyan Local & Regional Programs (32 - 41)
+            { 
+                title: "Young Scientists Kenya (YSK)", 
+                category: "stem", free: true, quick: false, local: true,
+                age: "13-18", ageGroup: "13-15", grade: "Form 1-4 / Y9-13", gradeGroup: "lower",
+                deadline: "July 2027",
+                img: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=600&auto=format&fit=crop",
+                tags: ["Science Fair", "Kenya"], link: "https://ysk.co.ke/", 
+                desc: "Premier national STEM exhibition for secondary school students in Kenya.",
+                tip: "Work with your school science teacher to submit your innovations before County level judging."
+            },
+            { 
+                title: "Kenya Mathematics Olympiad (KMO)", 
+                category: "stem", free: true, quick: true, local: true,
+                age: "13-18", ageGroup: "13-15", grade: "Form 1-4 / Y9-13", gradeGroup: "lower",
+                deadline: "May 2027",
+                img: "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=600&auto=format&fit=crop",
+                tags: ["Math", "Kenya"], link: "https://maths.uonbi.ac.ke/", 
+                desc: "National math competition run by University of Nairobi selecting top talent for Pan-African competitions.",
+                tip: "Solve previous Round 1 and Round 2 papers available on the UoN math department portal."
+            },
+            { 
+                title: "President's Award - Kenya", 
+                category: "summer", free: true, quick: false, local: true,
+                age: "14-24", ageGroup: "13-15", grade: "Form 1-4 / Y9-13", gradeGroup: "lower",
+                deadline: "Ongoing",
+                img: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=600&auto=format&fit=crop",
+                tags: ["Leadership", "Kenya"], link: "https://www.presidentsaward.or.ke/", 
+                desc: "Self-development program equipping young Kenyans with life skills, outdoor expeditions, and service hours.",
+                tip: "Register through your high school's PA patron teacher."
+            },
+            { 
+                title: "Equity Leaders Program (ELP)", 
+                category: "business", free: true, quick: false, local: true,
+                age: "16-19", ageGroup: "16-18", grade: "Form 4 / KCSE Graduates", gradeGroup: "upper",
+                deadline: "February 2027",
+                img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&auto=format&fit=crop",
+                tags: ["Scholarship", "Kenya"], link: "https://equitygroupholdings.com/", 
+                desc: "Pre-university internship and global university prep for top KCSE performers in every county.",
+                tip: "Aim for top grades in your KCSE exams to automatically qualify for county shortlist interviews."
+            },
+            { 
+                title: "KCB Foundation Scholars", 
+                category: "summer", free: true, quick: false, local: true,
+                age: "13-18", ageGroup: "13-15", grade: "Form 1 Entry / Form 1-4", gradeGroup: "lower",
+                deadline: "December 2026",
+                img: "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=600&auto=format&fit=crop",
+                tags: ["Full Scholarship", "Kenya"], link: "https://kcbgroup.com/foundation/", 
+                desc: "High school and tertiary scholarships supporting bright but needy students across Kenya.",
+                tip: "Submit KCPE/KPSEA certificates along with local chief recommendations."
+            },
+            { 
+                title: "KRA National Essay Competition", 
+                category: "essay", free: true, quick: true, local: true,
+                age: "14-18", ageGroup: "13-15", grade: "Form 1-4 / Y9-13", gradeGroup: "lower",
+                deadline: "October 2026",
+                img: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=600&auto=format&fit=crop",
+                tags: ["Taxation", "Kenya"], link: "https://www.kra.go.ke/", 
+                desc: "Annual essay contest organized by the Kenya Revenue Authority during Tax Month.",
+                tip: "Highlight how digital tax compliance helps fund youth education and healthcare."
+            },
+            { 
+                title: "M-Pesa Foundation Pre-College", 
+                category: "summer", free: true, quick: false, local: true,
+                age: "16-19", ageGroup: "16-18", grade: "Form 4 / KCSE Graduates", gradeGroup: "upper",
+                deadline: "January 2027",
+                img: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=600&auto=format&fit=crop",
+                tags: ["Leadership", "Kenya"], link: "https://mpesafoundationacademy.ac.ke/", 
+                desc: "Leadership, entrepreneurship, and tech bootcamps for graduating Kenyan students.",
+                tip: "Demonstrate a passion for technology and civic leadership."
+            },
+            { 
+                title: "World Vision Youth Climate Grant", 
+                category: "stem", free: true, quick: true, local: true,
+                age: "14-24", ageGroup: "13-15", grade: "Form 1-4 / Y9-13", gradeGroup: "lower",
+                deadline: "April 2027",
+                img: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=600&auto=format&fit=crop",
+                tags: ["Climate", "Kenya"], link: "https://www.worldvision.or.ke/", 
+                desc: "Grants and fellowships for Kenyan youth leading tree planting or water conservation projects.",
+                tip: "Include photo evidence of community tree planting or recycling drives."
+            },
+            { 
+                title: "Kenya Music & Drama Fest (Writing)", 
+                category: "essay", free: true, quick: false, local: true,
+                age: "13-18", ageGroup: "13-15", grade: "Form 1-4 / Y9-13", gradeGroup: "lower",
+                deadline: "March 2027",
+                img: "https://images.unsplash.com/photo-1460723237483-7a6dc9d0b212?w=600&auto=format&fit=crop",
+                tags: ["Creative", "Kenya"], link: "https://www.education.go.ke/", 
+                desc: "National creative writing, playwriting, and poetic composition contest.",
+                tip: "Submit scripts through your school drama patron."
+            },
+            { 
+                title: "EABL Sustainability Youth Grant", 
+                category: "business", free: true, quick: true, local: true,
+                age: "16-25", ageGroup: "16-18", grade: "Form 3-4 / Y11-13", gradeGroup: "upper",
+                deadline: "June 2027",
+                img: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=600&auto=format&fit=crop",
+                tags: ["Grant", "Kenya"], link: "https://www.eabl.com/", 
+                desc: "Seed funding for East African youth with sustainable recycling and agriculture business ideas.",
+                tip: "Propose eco-friendly agriculture or waste reduction concepts."
+            }
+        ];
+
+        // State Management
+        let savedPrograms = JSON.parse(localStorage.getItem('fahamu_saved')) || [];
+        let currentCategory = 'all';
+
+        // Filter Function
+        function filterPrograms() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const ageVal = document.getElementById('ageFilter').value;
+            const gradeVal = document.getElementById('gradeFilter').value;
+
+            const filtered = programs.filter(p => {
+                // Category Filter
+                let matchesCategory = true;
+                if (currentCategory === 'saved') matchesCategory = savedPrograms.includes(p.title);
+                else if (currentCategory === 'free') matchesCategory = p.free === true;
+                else if (currentCategory === 'quick') matchesCategory = p.quick === true;
+                else if (currentCategory === 'local') matchesCategory = p.local === true;
+                else if (currentCategory !== 'all') matchesCategory = p.category === currentCategory;
+
+                // Age Filter
+                let matchesAge = true;
+                if (ageVal !== 'all') matchesAge = p.ageGroup === ageVal;
+
+                // Grade Filter
+                let matchesGrade = true;
+                if (gradeVal !== 'all') matchesGrade = p.gradeGroup === gradeVal;
+
+                // Search Query
+                let matchesSearch = p.title.toLowerCase().includes(query) || 
+                                    p.desc.toLowerCase().includes(query) || 
+                                    p.tags.some(t => t.toLowerCase().includes(query));
+
+                return matchesCategory && matchesAge && matchesGrade && matchesSearch;
+            });
+
+            renderPrograms(filtered);
+        }
+
+        function setCategory(cat, btnElement) {
+            currentCategory = cat;
+            
+            // Reset active button styling
+            document.querySelectorAll('#categoryContainer button').forEach(btn => {
+                btn.className = "cat-btn bg-white text-gray-700 border border-gray-300 px-3 py-1.5 rounded-full";
+            });
+            if(btnElement) {
+                btnElement.className = "cat-btn bg-navy text-white px-3 py-1.5 rounded-full shadow-sm";
+            }
+
+            filterPrograms();
+        }
+
+        function toggleSave(index) {
+            const title = programs[index].title;
+            if (savedPrograms.includes(title)) {
+                savedPrograms = savedPrograms.filter(t => t !== title);
+            } else {
+                savedPrograms.push(title);
+            }
+            localStorage.setItem('fahamu_saved', JSON.stringify(savedPrograms));
+            filterPrograms();
+        }
+
+        // Render Cards Grid
+        function renderPrograms(list) {
+            const grid = document.getElementById('cardsGrid');
+            grid.innerHTML = '';
+
+            if (list.length === 0) {
+                grid.innerHTML = `<div class="col-span-full text-center py-12 text-gray-500 font-medium text-sm">No matching programs found. Try clearing your search or changing filters.</div>`;
+                return;
+            }
+
+            list.forEach(p => {
+                const originalIndex = programs.findIndex(orig => orig.title === p.title);
+                const isSaved = savedPrograms.includes(p.title);
+
+                const card = document.createElement('div');
+                card.className = "bg-white rounded-xl shadow-md hover:shadow-xl transition p-5 flex flex-col justify-between border border-gray-100 relative";
+
+                let tagsHTML = p.tags.map(t => `<span class="text-[10px] bg-slate-100 text-slate-700 px-2 py-0.5 rounded font-bold uppercase tracking-wider">${t}</span>`).join(' ');
+
+                let badges = '';
+                if (p.free) badges += '<span class="bg-emerald-100 text-emerald-800 text-[10px] font-black px-2 py-0.5 rounded-full mr-1">💚 FREE</span>';
+                if (p.quick) badges += '<span class="bg-purple-100 text-purple-800 text-[10px] font-black px-2 py-0.5 rounded-full mr-1">⚡ QUICK</span>';
+                if (p.local) badges += '<span class="bg-amber-100 text-amber-900 text-[10px] font-black px-2 py-0.5 rounded-full">🇰🇪 KENYA</span>';
+
+                card.innerHTML = `
+                    <div>
+                        <div class="flex justify-between items-start gap-2 mb-2">
+                            <h4 class="text-lg font-bold text-navy leading-snug pr-6">${p.title}</h4>
+                            <button onclick="toggleSave(${originalIndex})" class="absolute top-5 right-5 text-xl transition transform hover:scale-110 focus:outline-none" title="Save for later">
+                                ${isSaved ? '⭐' : '☆'}
+                            </button>
+                        </div>
+
+                        <!-- Requirements Pills -->
+                        <div class="flex flex-wrap items-center gap-1.5 text-[11px] text-gray-600 mb-3">
+                            <span class="bg-slate-100 text-slate-800 px-2 py-0.5 rounded font-semibold">🎂 ${p.age}</span>
+                            <span class="bg-slate-100 text-slate-800 px-2 py-0.5 rounded font-semibold">🎓 ${p.grade}</span>
+                        </div>
+
+                        <div class="mb-2">${badges}</div>
+                        <div class="flex flex-wrap gap-1 mb-3">${tagsHTML}</div>
+                        <p class="text-gray-600 text-xs leading-relaxed mb-4">${p.desc}</p>
+                    </div>
+
+                    <div class="space-y-2 pt-2 border-t border-gray-100">
+                        <button onclick="openModal(${originalIndex})" class="w-full bg-slate-100 text-navy text-xs font-bold py-2.5 rounded-lg hover:bg-slate-200 transition text-center">
+                            🔍 View Details & Requirements
+                        </button>
+                        <a href="${p.link}" target="_blank" rel="noopener noreferrer" class="block w-full bg-slate-900 text-white text-xs font-bold py-2.5 rounded-lg hover:bg-amber hover:text-navy transition text-center shadow-sm">
+                            Visit & Apply &rarr;
+                        </a>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Modal Functions
+        function openModal(index) {
+            const p = programs[index];
+            document.getElementById('modalTitle').innerText = p.title;
+            document.getElementById('modalAge').innerText = p.age + " years old";
+            document.getElementById('modalGrade').innerText = p.grade;
+            document.getElementById('modalDeadline').innerText = p.deadline;
+            document.getElementById('modalFee').innerText = p.free ? "100% Free / Fully Funded" : "Paid (Financial Aid / Scholarships Available)";
+            document.getElementById('modalDesc').innerText = p.desc;
+            document.getElementById('modalTip').innerText = p.tip;
+            document.getElementById('modalApplyBtn').href = p.link;
+            document.getElementById('modalImg').style.backgroundImage = `url('${p.img}')`;
+            document.getElementById('modalCategoryBadge').innerText = p.category.toUpperCase();
+
+            document.getElementById('detailModal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('detailModal').classList.add('hidden');
+        }
+
+        // Close Modal when clicking background overlay
+        document.getElementById('detailModal').addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
+
+        // Initial Page Render
+        renderPrograms(programs);
+    </script>
+</body>
+</html>
